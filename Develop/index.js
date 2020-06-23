@@ -108,7 +108,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'questions',
+        name: 'contact',
         message: `
         ================================================================================
         Input allows Markdown formatting.
@@ -133,10 +133,13 @@ const dummyObject = {
     ],
     description: 'Project Description',
     installation: 'I would do it',
-    usage: 'for fun<br><br>or not',
+    usage: 'for fun\n\n or not',
     license: 'ISC',
     contributingSelect: 'Contributor Covenant',
-    tests: '`john`'
+    tests: '`john`',
+    github: 'ZQWhiting',
+    email: 'example@email.com',
+    contact: 'alrighty then!'
   }
 
 // function to write README file
@@ -155,4 +158,4 @@ function writeToFile(fileName, data) {
 // function call to initialize program
 //init();
 
-generateMarkdown(dummyObject);
+console.log(generateMarkdown(dummyObject));
