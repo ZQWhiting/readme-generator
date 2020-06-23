@@ -4,13 +4,13 @@ const generateDescription = (description) => {
   }
 
   return `<a name='description'></a>
-  ## Description
-  ${description}`.trim()
+## Description
+  ${description}`
 }
 
 const generateToC = (sections) => {
   let text = `## Table of Contents
-  `
+`
 
   sections.filter(item => {
     if (item !== 'Table of Contents') return item;
@@ -19,7 +19,7 @@ const generateToC = (sections) => {
     text += `* [${section}](#${section})\n`
   });
 
-  return text.trim();
+  return text
 }
 
 const generateInstallation = (installation) => {
@@ -28,8 +28,8 @@ const generateInstallation = (installation) => {
   }
 
   return `<a name='installation'></a>
-  ## Installation
-  ${installation}`.trim()
+## Installation
+  ${installation}`
 }
 
 const generateUsage = (usage) => {
@@ -38,8 +38,8 @@ const generateUsage = (usage) => {
   }
 
   return `<a name='usage'></a>
-  ## Usage
-  ${usage}`.trim()
+## Usage
+  ${usage}`
 }
 
 const generateLicense = (license) => {
@@ -48,7 +48,7 @@ const generateLicense = (license) => {
   }
 
   return `<a name='license'></a>
-  ## License
+## License
   ${license}`.trim()
 }
 
@@ -58,9 +58,11 @@ const generateContributing = (contributingSelect, contributing) => {
   }
 
   if (contributing) {
+
     return `<a name='contributing'></a>
-    ## Contributing
-    ${contributing}`.trim()
+## Contributing
+${contributing}`
+
   } else {
     return '';
   }
@@ -72,8 +74,8 @@ const generateTests = (tests) => {
   }
 
   return `<a name='tests'></a>
-  ## Tests
-  ${tests}`.trim()
+## Tests
+${tests}`
 }
 
 const generateQuestions = (questions) => {
@@ -82,8 +84,8 @@ const generateQuestions = (questions) => {
   }
 
   let text = `<a name='questions'></a>
-  ## Questions
-  `
+## Questions
+`
 
   if (questions.contact) {
     text = text + questions.contact + '\n\n'
@@ -97,7 +99,7 @@ const generateQuestions = (questions) => {
     text = text + `<${questions.email}>`
   }
 
-  return text.trim()
+  return text
 }
 
 // function to generate markdown for README
@@ -105,8 +107,7 @@ function generateMarkdown(templateData) {
   // deconstruction of data
   const { title, sections, description, installation, usage, license, contributingSelect, contributing, tests, ...questions } = templateData;
 
-  return `
-# ${title}
+  return `# ${title}
 
 ${generateDescription(description)}
 
@@ -123,7 +124,7 @@ ${generateContributing(contributingSelect, contributing)}
 ${generateTests(tests)}
 
 ${generateQuestions(questions)}
-`.trim()
+`
 }
 
 module.exports = generateMarkdown;
