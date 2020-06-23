@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown')
 
 // array of questions for user
 const questions = [
@@ -24,19 +25,19 @@ const questions = [
     {
         type: 'input',
         name: 'description',
-        message: 'What is your project description?',
+        message: 'What is your project description? (Use \\n for linebreak and \\n\\n for paragraph breaks. Otherwise, all markdown formatting is the sames)',
         when: ({ sections }) => sections.includes('Description')
     },
     {
         type: 'input',
         name: 'installation',
-        message: 'How would one install your project?',
+        message: 'How would one install your project? (Use \\n for linebreak and \\n\\n for paragraph breaks. Otherwise, all markdown formatting is the sames)',
         when: ({ sections }) => sections.includes('Installation')
     },
     {
         type: 'input',
         name: 'usage',
-        message: 'How would one use your project?',
+        message: 'How would one use your project? (Use \\n for linebreak and \\n\\n for paragraph breaks. Otherwise, all markdown formatting is the sames)',
         when: ({ sections }) => sections.includes('Usage')
     },
     {
@@ -56,7 +57,7 @@ const questions = [
     {
         type: 'input',
         name: 'contributing',
-        message: 'What guidelines would other developers need to follow when contributing to your project?',
+        message: 'What guidelines would other developers need to follow when contributing to your project? (Use \\n for linebreaks and \\n\\n for paragraph breaks. Otherwise, all markdown formatting is the same)',
         when: ({ contributingSelect }) => {
             if (contributingSelect)
                 contributingSelect.includes('Create your own')
@@ -65,7 +66,7 @@ const questions = [
     {
         type: 'input',
         name: 'tests',
-        message: 'What tests would you like to add?',
+        message: 'What tests would you like to add? (Use \\n for linebreak and \\n\\n for paragraph breaks. Otherwise, all markdown formatting is the sames)',
         when: ({ sections }) => sections.includes('Tests')
     },
     {
@@ -83,7 +84,7 @@ const questions = [
     {
         type: 'input',
         name: 'questions',
-        message: 'How should others reach you if they have questions?',
+        message: 'How should others reach you if they have questions? (Use \\n for linebreaks and \\n\\n for paragraph breaks. Otherwise, all markdown formatting is the same)',
         when: ({ sections }) => sections.includes('questions')
     },
 ];
