@@ -25,19 +25,19 @@ const questions = [
     {
         type: 'input',
         name: 'description',
-        message: 'What is your project description? (Use \\n for linebreak and \\n\\n for paragraph breaks. Otherwise, all markdown formatting is the sames)',
+        message: 'What is your project description?\n Allows Markdown formatting.\n Formatting exceptions: use \\n for linebreak and \\n\\n for paragraph breaks.\n',
         when: ({ sections }) => sections.includes('Description')
     },
     {
         type: 'input',
         name: 'installation',
-        message: 'How would one install your project? (Use \\n for linebreak and \\n\\n for paragraph breaks. Otherwise, all markdown formatting is the sames)',
+        message: 'How would one install your project?\n Allows Markdown formatting.\n Formatting exceptions: use \\n for linebreak and \\n\\n for paragraph breaks.\n',
         when: ({ sections }) => sections.includes('Installation')
     },
     {
         type: 'input',
         name: 'usage',
-        message: 'How would one use your project? (Use \\n for linebreak and \\n\\n for paragraph breaks. Otherwise, all markdown formatting is the sames)',
+        message: 'How would one use your project?\n Allows Markdown formatting.\n Formatting exceptions: use \\n for linebreak and \\n\\n for paragraph breaks.\n',
         when: ({ sections }) => sections.includes('Usage')
     },
     {
@@ -57,7 +57,7 @@ const questions = [
     {
         type: 'input',
         name: 'contributing',
-        message: 'What guidelines would other developers need to follow when contributing to your project? (Use \\n for linebreaks and \\n\\n for paragraph breaks. Otherwise, all markdown formatting is the same)',
+        message: 'What guidelines would other developers need to follow when contributing to your project?\n Allows Markdown formatting.\n Formatting exceptions: use \\n for linebreaks \nand \\n\\n for paragraph breaks.\n',
         when: ({ contributingSelect }) => {
             if (contributingSelect)
                 contributingSelect.includes('Create your own')
@@ -66,7 +66,7 @@ const questions = [
     {
         type: 'input',
         name: 'tests',
-        message: 'What tests would you like to add? (Use \\n for linebreak and \\n\\n for paragraph breaks. Otherwise, all markdown formatting is the sames)',
+        message: 'What tests would you like to add?\n Allows Markdown formatting.\n Formatting exceptions: use \\n for linebreak and \\n\\n for paragraph breaks.\n',
         when: ({ sections }) => sections.includes('Tests')
     },
     {
@@ -84,7 +84,7 @@ const questions = [
     {
         type: 'input',
         name: 'questions',
-        message: 'How should others reach you if they have questions? (Use \\n for linebreaks and \\n\\n for paragraph breaks. Otherwise, all markdown formatting is the same)',
+        message: 'How should others reach you if they have questions?\n Allows Markdown formatting.\n Formatting exceptions: use \\n for linebreaks \nand \\n\\n for paragraph breaks.\n',
         when: ({ sections }) => sections.includes('questions')
     },
 ];
