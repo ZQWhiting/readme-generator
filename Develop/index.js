@@ -113,16 +113,40 @@ const questions = [
     },
 ];
 
+const dummyObject = {
+    title: 'Markdown Generator',
+    sections: [
+      'Description',
+      'Table of Contents',
+      'Installation',
+      'Usage',
+      'License',
+      'Contributing',
+      'Tests',
+      'Questions'
+    ],
+    description: 'Project Description',
+    installation: 'I would do it',
+    usage: 'for fun<br><br>or not',
+    license: 'ISC',
+    contributingSelect: 'Contributor Covenant',
+    tests: '`john`'
+  }
+
 // function to write README file
 function writeToFile(fileName, data) {
 }
 
 // function to initialize program
-function init() {
-    return inquirer
-        .prompt(questions)
-        .then(answers => console.log(answers))
-}
+// function init() {
+//     return inquirer
+//         .prompt(questions)
+//         .then(answers => {
+//             return generateMarkdown(answers);
+//         })
+// }
 
 // function call to initialize program
-init();
+//init();
+
+generateMarkdown(dummyObject);
