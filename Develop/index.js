@@ -28,7 +28,7 @@ const questions = [
         message: `
         ================================================================================
         Input allows Markdown formatting.
-        Formatting exceptions: use <br> for linebreak and <br><br> for paragraph breaks.
+        Formatting exceptions: use \n\n for line breaks.
         ================================================================================
         ` + '\nWhat is your project description?\n\n',
         when: ({ sections }) => sections.includes('Description')
@@ -39,7 +39,7 @@ const questions = [
         message: `
         ================================================================================
         Input allows Markdown formatting.
-        Formatting exceptions: use <br> for linebreak and <br><br> for paragraph breaks.
+        Formatting exceptions: use \n\n for line breaks.
         ================================================================================
         ` + '\nHow would one install your project?\n\n',
         when: ({ sections }) => sections.includes('Installation')
@@ -50,7 +50,7 @@ const questions = [
         message: `
         ================================================================================
         Input allows Markdown formatting.
-        Formatting exceptions: use <br> for linebreak and <br><br> for paragraph breaks.
+        Formatting exceptions: use \n\n for line breaks.
         ================================================================================
         ` + '\nHow would one use your project?\n\n',
         when: ({ sections }) => sections.includes('Usage')
@@ -75,7 +75,7 @@ const questions = [
         message: `
         ================================================================================
         Input allows Markdown formatting.
-        Formatting exceptions: use <br> for linebreak and <br><br> for paragraph breaks.
+        Formatting exceptions: use \n\n for line breaks.
         ================================================================================
         ` + '\nWhat guidelines would other developers need to follow when contributing to your project?\n\n',
         when: ({ contributingSelect }) => {
@@ -89,7 +89,7 @@ const questions = [
         message: `
         ================================================================================
         Input allows Markdown formatting.
-        Formatting exceptions: use <br> for linebreak and <br><br> for paragraph breaks.
+        Formatting exceptions: use \n\n for line breaks.
         ================================================================================
         ` + '\nWhat tests would you like to add?\n\n',
         when: ({ sections }) => sections.includes('Tests')
@@ -112,7 +112,7 @@ const questions = [
         message: `
         ================================================================================
         Input allows Markdown formatting.
-        Formatting exceptions: use <br> for linebreak and <br><br> for paragraph breaks.
+        Formatting exceptions: use \n\n for line breaks.
         ================================================================================
         ` + '\nHow should others reach you if they have questions?\n\n',
         when: ({ sections }) => sections.includes('questions')
@@ -132,7 +132,7 @@ const dummyObject = {
       'Questions'
     ],
     description: 'Project Description',
-    installation: 'I would do it',
+    installation: 'I would\n do it',
     usage: 'for fun\n\n or not',
     license: 'ISC',
     contributingSelect: 'Create your own',
