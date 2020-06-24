@@ -39,7 +39,7 @@ const copyLicense = (license) => {
 
 const copyContributorCovenant = () => {
     return new Promise((resolve, reject) => {
-        fs.copyFile(`./src/contributor-covenant.md`, '../dist/contributor-covenant.md', err => {
+        fs.copyFile(`./src/contributor-covenant.md`, '../dist/contributor-covenant.txt', err => {
             if (err) {
                 reject(err);
                 return;
