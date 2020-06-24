@@ -27,11 +27,11 @@ Clone the [repository](https://github.com/ZQWhiting/readme-generator/) and run t
 
 <a name='license'></a>
 ## License
-Licensed under the [MIT](./LICENSE.md) license.
+Licensed under the [MIT](./LICENSE.txt) license.
 
 <a name='contributing'></a>
 ## Contributing
-[Contributor Covenant](./contributor-covenant.md)
+[Contributor Covenant](./contributor-covenant.txt)
 
 <a name='tests'></a>
 ## Tests
