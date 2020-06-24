@@ -15,8 +15,8 @@ const generateToC = (sections) => {
   sections.filter(item => {
     if (item !== 'Table of Contents') return item;
   })
-  .forEach(section => {
-    text += `* [${section}](#${section})\n`
+  .forEach(item => {
+    text += `* [${item}](#${item})\n`
   });
 
   return text
@@ -49,7 +49,7 @@ const generateLicense = (license) => {
 
   return `<a name='license'></a>
 ## License
-  ${license}`.trim()
+  Licensed under the [${license}](./dist/LICENSE.md) license.`
 }
 
 const generateContributing = (contributingSelect, contributing) => {
@@ -57,14 +57,15 @@ const generateContributing = (contributingSelect, contributing) => {
     return '';
   }
 
+  let text = `<a name='contributing'></a>
+## Contributing
+`
   if (contributing) {
 
-    return `<a name='contributing'></a>
-## Contributing
-${contributing}`
+    return text += contributing;
 
   } else {
-    return '';
+    return text += '[Contributor Covenant](./dist/contributor-covenant.md)';
   }
 }
 
@@ -75,7 +76,7 @@ const generateTests = (tests) => {
 
   return `<a name='tests'></a>
 ## Tests
-${tests}`
+  ${tests}`
 }
 
 const generateQuestions = (questions) => {
@@ -88,18 +89,18 @@ const generateQuestions = (questions) => {
 `
 
   if (questions.contact) {
-    text = text + questions.contact + '\n\n'
+    text += questions.contact + '\n\n'
   }
 
   if (questions.github) {
-    text = text + `[GitHub](https://github.com/${questions.github})\n\n`
+    text += `${questions.github}'s [GitHub](https://github.com/${questions.github})\n\n`
   }
 
   if (questions.email) {
-    text = text + `<${questions.email}>`
+    text += `Email me at <${questions.email}>`
   }
 
-  return text
+  return text;
 }
 
 // function to generate markdown for README
