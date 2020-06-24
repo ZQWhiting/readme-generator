@@ -1,7 +1,12 @@
 const generateBadges = (license) => {
+  if (!license) {
+    return '';
+  }
+
   license = license
     .replace(' ', '_')
     .replace(' ', '_')
+
   return `
 ![license](https://img.shields.io/badge/License-${license}-blue)
 `
@@ -131,7 +136,7 @@ const generateQuestions = (questions) => {
 function generateMarkdown(templateData) {
   // deconstruction of data
   const { title, sections, description, installation, usage, license, contributingSelect, contributing, tests, ...questions } = templateData;
-
+  console.log(contributing)
   return '# ' + title +
     generateBadges(license) +
     generateDescription(description) +
