@@ -27,33 +27,33 @@ const questions = [
         type: 'input',
         name: 'description',
         message: `
-        ================================================================================
+        ==================================================
         Input allows Markdown formatting.
-        Formatting exceptions: use \n\n for line breaks.
-        ================================================================================
-        ` + '\nWhat is your project description?\n\n',
+        Formatting exceptions: use \\n\\n for line breaks.
+        ==================================================
+        ` + '\nWhat is your project description?\\n\\n',
         when: ({ sections }) => sections.includes('Description')
     },
     {
         type: 'input',
         name: 'installation',
         message: `
-        ================================================================================
+        ==================================================
         Input allows Markdown formatting.
-        Formatting exceptions: use \n\n for line breaks.
-        ================================================================================
-        ` + '\nHow would one install your project?\n\n',
+        Formatting exceptions: use \\n\\n for line breaks.
+        ==================================================
+        ` + '\nHow would one install your project?\\n\\n',
         when: ({ sections }) => sections.includes('Installation')
     },
     {
         type: 'input',
         name: 'usage',
         message: `
-        ================================================================================
+        ==================================================
         Input allows Markdown formatting.
-        Formatting exceptions: use \n\n for line breaks.
-        ================================================================================
-        ` + '\nHow would one use your project?\n\n',
+        Formatting exceptions: use \\n\\n for line breaks.
+        ==================================================
+        ` + '\nHow would one use your project?\\n\\n',
         when: ({ sections }) => sections.includes('Usage')
     },
     {
@@ -74,11 +74,11 @@ const questions = [
         type: 'input',
         name: 'contributing',
         message: `
-        ================================================================================
+        ==================================================
         Input allows Markdown formatting.
-        Formatting exceptions: use \n\n for line breaks.
-        ================================================================================
-        ` + '\nWhat guidelines would other developers need to follow when contributing to your project?\n\n',
+        Formatting exceptions: use \\n\\n for line breaks.
+        ==================================================
+        ` + '\nWhat guidelines would other developers need to follow when contributing to your project?\\n\\n',
         when: ({ contributingSelect }) => {
             if (contributingSelect)
                 contributingSelect.includes('Create your own')
@@ -88,11 +88,11 @@ const questions = [
         type: 'input',
         name: 'tests',
         message: `
-        ================================================================================
+        ==================================================
         Input allows Markdown formatting.
-        Formatting exceptions: use \n\n for line breaks.
-        ================================================================================
-        ` + '\nWhat tests would you like to add?\n\n',
+        Formatting exceptions: use \\n\\n for line breaks.
+        ==================================================
+        ` + '\nWhat tests would you like to add?\\n\\n',
         when: ({ sections }) => sections.includes('Tests')
     },
     {
@@ -111,11 +111,11 @@ const questions = [
         type: 'input',
         name: 'contact',
         message: `
-        ================================================================================
+        ==================================================
         Input allows Markdown formatting.
-        Formatting exceptions: use \n\n for line breaks.
-        ================================================================================
-        ` + '\nHow should others reach you if they have questions?\n\n',
+        Formatting exceptions: use \\n\\n for line breaks.
+        ==================================================
+        ` + '\nHow should others reach you if they have questions?\\n\\n',
         when: ({ sections }) => sections.includes('Questions')
     },
 ];
@@ -134,7 +134,7 @@ const dummyObject = {
     ],
     description: 'Project Description',
     installation: 'I would\n do it',
-    usage: 'for fun\n\n or not',
+    usage: 'for fun\\n\\n or not',
     license: 'ISC',
     contributingSelect: 'Contributor Covenant',
     tests: '`john`',
