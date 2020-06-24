@@ -17,7 +17,10 @@ This is a node based app that allows the user to create a high quality README fi
 
 <a name='installation'></a>
 ## Installation
-Clone the [repository](https://github.com/ZQWhiting/readme-generator/) and run the `./index.js` file in [node.js](https://nodejs.org).
+* Install [node.js](https://nodejs.org) if not installed.
+* Clone the [repository](https://github.com/ZQWhiting/readme-generator/).
+* In the terminal, navigate to the repository and enter `npm install`.
+* Run the `./index.js` file in [node.js](https://nodejs.org).
 
 <a name='usage'></a>
 ## Usage
