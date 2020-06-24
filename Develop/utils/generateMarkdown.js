@@ -112,9 +112,9 @@ function generateMarkdown(templateData) {
 
 ${generateDescription(description)}
 
-${generateInstallation(installation)}
-
 ${generateToC(sections)}
+
+${generateInstallation(installation)}
 
 ${generateUsage(usage)}
 
