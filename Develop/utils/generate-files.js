@@ -18,9 +18,12 @@ function writeFile(markdown) {
 }
 
 // function to copy LICENSE and Contributor Covenant READMEs.
-const copyLicense = (license, contributingSelect) => {
+const copyLicense = (license) => {
+    license = license
+        .replace(' ', '-')
+        .replace('/', '-')
     return new Promise((resolve, reject) => {
-        fs.copyFile(`./src/${license}.md`, '../dist/LICENSE.md', err => {
+        fs.copyFile(`./src/licenses/${license}.txt`, '../dist/LICENSE.md', err => {
             if (err) {
                 reject(err);
                 return;
