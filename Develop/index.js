@@ -80,8 +80,9 @@ const questions = [
         ==================================================
         ` + '\nWhat guidelines would other developers need to follow when contributing to your project?\n\n',
         when: ({ contributingSelect }) => {
-            if (contributingSelect)
-                contributingSelect.includes('Create your own')
+            if (contributingSelect) {
+                return contributingSelect.includes('Create your own')
+            }
         }
     },
     {
