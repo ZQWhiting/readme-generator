@@ -13,14 +13,15 @@ This is a node based app that allows the user to create a high quality README fi
 * [Contributing](#Contributing)
 * [Tests](#Tests)
 * [Questions](#Questions)
+* [Credits](#Credits)
 
 <a name='installation'></a>
 ## Installation
-Clone the repository and run the index.js file in node.
+Clone the [repository](https://github.com/ZQWhiting/readme-generator/) and run the index.js file in [node.js](https://nodejs.org).
 
 <a name='usage'></a>
 ## Usage
-* Run the index.js file in node
+* Run the `./index.js` file in [node.js](https://nodejs.org)
 * Answer the prompts
 * Retrieve your files from the `./dist` directory
 
