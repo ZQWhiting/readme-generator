@@ -13,6 +13,7 @@ This is a node based app that allows the user to create a high quality README fi
 * [Contributing](#Contributing)
 * [Tests](#Tests)
 * [Questions](#Questions)
+* [Credits](#Credits)
 
 <a name='installation'></a>
 ## Installation
