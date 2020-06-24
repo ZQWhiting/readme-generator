@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const generateMarkdown = require('./utils/generateMarkdown')
+const generateMarkdown = require('./utils/generate-markdown')
 const { writeFile, copyLicense, copyContributorCovenant } = require('./utils/generate-files')
 
 // array of questions for user
