@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown')
+const { writeFile, copyLicense, copyContributorCovenant } = require('./utils/generate-files')
 
 // array of questions for user
 const questions = [
@@ -98,13 +99,13 @@ const questions = [
         type: 'input',
         name: 'github',
         message: 'What is your GitHub username?',
-        when: ({ sections }) => sections.includes('questions')
+        when: ({ sections }) => sections.includes('Questions')
     },
     {
         type: 'input',
         name: 'email',
         message: 'What is your email address?',
-        when: ({ sections }) => sections.includes('questions')
+        when: ({ sections }) => sections.includes('Questions')
     },
     {
         type: 'input',
@@ -115,21 +116,21 @@ const questions = [
         Formatting exceptions: use \n\n for line breaks.
         ================================================================================
         ` + '\nHow should others reach you if they have questions?\n\n',
-        when: ({ sections }) => sections.includes('questions')
+        when: ({ sections }) => sections.includes('Questions')
     },
 ];
 
 const dummyObject = {
     title: 'Markdown Generator',
     sections: [
-      'Description',
-      'Table of Contents',
-      'Installation',
-      'Usage',
-      'License',
-      'Contributing',
-      'Tests',
-      'Questions'
+        'Description',
+        'Table of Contents',
+        'Installation',
+        'Usage',
+        'License',
+        'Contributing',
+        'Tests',
+        'Questions'
     ],
     description: 'Project Description',
     installation: 'I would\n do it',
@@ -140,22 +141,44 @@ const dummyObject = {
     github: 'ZQWhiting',
     email: 'example@email.com',
     contact: 'alrighty then!'
-  }
-
-// function to write README file
-function writeToFile(fileName, data) {
 }
 
 // function to initialize program
-// function init() {
-//     return inquirer
-//         .prompt(questions)
-//         .then(answers => {
-//             return generateMarkdown(answers);
-//         })
-// }
+function init() {
+    let license, contributingSelect;
 
-// function call to initialize program
-//init();
+    inquirer
+        .prompt(questions)
+        .then(answers => {
+            license = answers.license
+            contributingSelect = answers.contributingSelect
+            return generateMarkdown(answers);
+        })
+        .then(markdown => {
+            return writeFile(markdown);
+        })
+        .then((writeFileResponse) => {
+            console.log(writeFileResponse);
+            if (license) {
+                return copyLicense(license);
+            } else {
+                return '';
+            }
+        })
+        .then((copyLicenseResponse) => {
+            console.log(copyLicenseResponse);
+            if (contributingSelect === 'Contributor Covenant') {
+                return copyContributorCovenant();
+            } else {
+                return '';
+            }
+        })
+        .then((copyContributorCovenantResponse) => {
+            console.log(copyContributorCovenantResponse)
+        })
+        .catch(err => {
+            console.log(err);
+        });
+}
 
-console.log(generateMarkdown(dummyObject));
+init();
