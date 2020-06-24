@@ -120,29 +120,6 @@ const questions = [
     },
 ];
 
-const dummyObject = {
-    title: 'Markdown Generator',
-    sections: [
-        'Description',
-        'Table of Contents',
-        'Installation',
-        'Usage',
-        'License',
-        'Contributing',
-        'Tests',
-        'Questions'
-    ],
-    description: 'Project Description',
-    installation: 'I would\n do it',
-    usage: 'for fun\\n\\n or not',
-    license: 'ISC',
-    contributingSelect: 'Contributor Covenant',
-    tests: '`john`',
-    github: 'ZQWhiting',
-    email: 'example@email.com',
-    contact: 'alrighty then!'
-}
-
 // function to initialize program
 function init() {
     let license, contributingSelect;
