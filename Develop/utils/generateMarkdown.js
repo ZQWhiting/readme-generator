@@ -3,21 +3,24 @@ const generateDescription = (description) => {
     return '';
   }
 
-  return `<a name='description'></a>
+  return `
+<a name='description'></a>
 ## Description
-  ${description}`
+${description}
+`
 }
 
 const generateToC = (sections) => {
-  let text = `## Table of Contents
+  let text = `
+## Table of Contents
 `
 
   sections.filter(item => {
     if (item !== 'Table of Contents') return item;
   })
-  .forEach(item => {
-    text += `* [${item}](#${item})\n`
-  });
+    .forEach(item => {
+      text += `* [${item}](#${item})\n`
+    });
 
   return text
 }
@@ -27,9 +30,11 @@ const generateInstallation = (installation) => {
     return '';
   }
 
-  return `<a name='installation'></a>
+  return `
+<a name='installation'></a>
 ## Installation
-  ${installation}`
+${installation}
+`
 }
 
 const generateUsage = (usage) => {
@@ -37,9 +42,11 @@ const generateUsage = (usage) => {
     return '';
   }
 
-  return `<a name='usage'></a>
+  return `
+<a name='usage'></a>
 ## Usage
-  ${usage}`
+${usage}
+`
 }
 
 const generateLicense = (license) => {
@@ -47,9 +54,11 @@ const generateLicense = (license) => {
     return '';
   }
 
-  return `<a name='license'></a>
+  return `
+<a name='license'></a>
 ## License
-  Licensed under the [${license}](./dist/LICENSE.md) license.`
+Licensed under the [${license}](./LICENSE.md) license.
+`
 }
 
 const generateContributing = (contributingSelect, contributing) => {
@@ -57,15 +66,16 @@ const generateContributing = (contributingSelect, contributing) => {
     return '';
   }
 
-  let text = `<a name='contributing'></a>
+  let text = `
+<a name='contributing'></a>
 ## Contributing
 `
   if (contributing) {
 
-    return text += contributing;
+    return text += contributing + '\n';
 
   } else {
-    return text += '[Contributor Covenant](./dist/contributor-covenant.md)';
+    return text += '[Contributor Covenant](./contributor-covenant.md)\n';
   }
 }
 
@@ -74,9 +84,11 @@ const generateTests = (tests) => {
     return ''
   }
 
-  return `<a name='tests'></a>
+  return `
+<a name='tests'></a>
 ## Tests
-  ${tests}`
+${tests}
+`
 }
 
 const generateQuestions = (questions) => {
@@ -84,20 +96,23 @@ const generateQuestions = (questions) => {
     return ''
   }
 
-  let text = `<a name='questions'></a>
+  const { contact, github, email } = questions;
+
+  let text = `
+<a name='questions'></a>
 ## Questions
 `
 
-  if (questions.contact) {
-    text += questions.contact + '\n\n'
+  if (contact) {
+    text += contact + '\n\n'
   }
 
-  if (questions.github) {
-    text += `${questions.github}'s [GitHub](https://github.com/${questions.github})\n\n`
+  if (github) {
+    text += `${github}'s [GitHub](https://github.com/${github})\n\n`
   }
 
-  if (questions.email) {
-    text += `Email me at <${questions.email}>`
+  if (email) {
+    text += `Email me at <${email}>`
   }
 
   return text;
@@ -108,24 +123,15 @@ function generateMarkdown(templateData) {
   // deconstruction of data
   const { title, sections, description, installation, usage, license, contributingSelect, contributing, tests, ...questions } = templateData;
 
-  return `# ${title}
-
-${generateDescription(description)}
-
-${generateToC(sections)}
-
-${generateInstallation(installation)}
-
-${generateUsage(usage)}
-
-${generateLicense(license)}
-
-${generateContributing(contributingSelect, contributing)}
-
-${generateTests(tests)}
-
-${generateQuestions(questions)}
-`
+  return '# ' + title +
+    generateDescription(description) +
+    generateToC(sections) +
+    generateInstallation(installation) +
+    generateUsage(usage) +
+    generateLicense(license) +
+    generateContributing(contributingSelect, contributing) +
+    generateTests(tests) +
+    generateQuestions(questions)
 }
 
 module.exports = generateMarkdown;
