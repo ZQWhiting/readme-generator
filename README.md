@@ -30,11 +30,11 @@ This is a node based app that allows the user to create a high quality README fi
 
 <a name='license'></a>
 ## License
-Licensed under the [MIT](./LICENSE.txt) license.
+Licensed under the [MIT](./doc/LICENSE.txt) license.
 
 <a name='contributing'></a>
 ## Contributing
-[Contributor Covenant](./contributor-covenant.txt)
+[Contributor Covenant](./doc/contributor-covenant.txt)
 
 <a name='tests'></a>
 ## Tests
@@ -51,5 +51,5 @@ Email me at <zach.whiting@icloud.com>
 <a name ='credits'></a>
 ## Credits
 Author: ZQWhiting\
-[How to create a Professional README](./readme-guide.md)\
+[How to create a Professional README](./doc/readme-guide.md)\
 Starting code and prompt provided by the UofU Online Coding Bootcamp
