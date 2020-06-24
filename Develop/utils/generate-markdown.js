@@ -1,5 +1,7 @@
 const generateBadges = (license) => {
-  license = license.replace(' ', '_')
+  license = license
+    .replace(' ', '_')
+    .replace(' ', '_')
   return `
 ![license](https://img.shields.io/badge/License-${license}-blue)
 `
