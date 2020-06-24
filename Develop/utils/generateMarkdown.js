@@ -1,3 +1,9 @@
+const generateBadges = (license) => {
+  return `
+![license](https://img.shields.io/badge/License-${license}-blue)
+`
+}
+
 const generateDescription = (description) => {
   if (!description) {
     return '';
@@ -92,11 +98,11 @@ ${tests}
 }
 
 const generateQuestions = (questions) => {
-  if (!questions) {
+  const { contact, github, email } = questions;
+
+  if (!contact & !github & !email) {
     return ''
   }
-
-  const { contact, github, email } = questions;
 
   let text = `
 <a name='questions'></a>
@@ -124,6 +130,7 @@ function generateMarkdown(templateData) {
   const { title, sections, description, installation, usage, license, contributingSelect, contributing, tests, ...questions } = templateData;
 
   return '# ' + title +
+    generateBadges(license) +
     generateDescription(description) +
     generateToC(sections) +
     generateInstallation(installation) +
