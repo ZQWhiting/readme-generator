@@ -21,7 +21,7 @@ Clone the [repository](https://github.com/ZQWhiting/readme-generator/) and run t
 
 <a name='usage'></a>
 ## Usage
-* Run the './index.js' file in [node.js](https://nodejs.org)
+* Run the `./index.js` file in [node.js](https://nodejs.org)
 * Answer the prompts
 * Retrieve your files from the `./dist` directory
 
