@@ -60,7 +60,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'What license does your project use?',
-        choices: ['No license', 'AFL v3.0', 'GNU AGPLv3', 'Apache 2.0', 'Artistic 2.0', 'BSD 0-Clause', 'BSD 2-Clause', 'BSD 3-Clause Clear', 'BSD 3-Clause', 'BSD 4-Clause', 'BSL v1.0', 'CC-BY-4.0', 'CC-BY-SA-4.0', 'CC0-1.0', 'CeCILL v2.1', 'ECL v2.0', 'EPL v1.0', 'EPL v2.0', 'EUPL v1.1', 'EUPL v1.2', 'GNU GPLv2', 'GNU GPLv3', 'ISC', 'GNU LGPLv2.1', 'GNU LGPLv3', 'LPPL v1.3c', 'MIT', 'MPL v2', 'Ms-PL', 'Ms-RL', 'UIUC/NCSA', 'ODbL', 'OFL v1.1', 'OSL v3.0', 'PostgreSQL', 'Unlicense', 'UPL v1.0', 'Vim', 'Zlib'],
+        choices: ['AFL v3.0', 'GNU AGPLv3', 'Apache 2.0', 'Artistic 2.0', 'BSD 0-Clause', 'BSD 2-Clause', 'BSD 3-Clause Clear', 'BSD 3-Clause', 'BSD 4-Clause', 'BSL v1.0', 'CC-BY-4.0', 'CC-BY-SA-4.0', 'CC0-1.0', 'CeCILL v2.1', 'ECL v2.0', 'EPL v1.0', 'EPL v2.0', 'EUPL v1.1', 'EUPL v1.2', 'GNU GPLv2', 'GNU GPLv3', 'ISC', 'GNU LGPLv2.1', 'GNU LGPLv3', 'LPPL v1.3c', 'MIT', 'MPL v2', 'Ms-PL', 'Ms-RL', 'UIUC/NCSA', 'ODbL', 'OFL v1.1', 'OSL v3.0', 'PostgreSQL', 'Unlicense', 'UPL v1.0', 'Vim', 'Zlib'],
         when: ({ sections }) => sections.includes('License')
     },
     {
