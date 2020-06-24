@@ -29,7 +29,7 @@ const questions = [
         message: `
         ==================================================
         Input allows Markdown formatting.
-        Formatting exceptions: use \\n\\n for line breaks.
+        Formatting exceptions: use <br> for line breaks.
         ==================================================
         ` + '\nWhat is your project description?\n\n',
         when: ({ sections }) => sections.includes('Description')
@@ -40,7 +40,7 @@ const questions = [
         message: `
         ==================================================
         Input allows Markdown formatting.
-        Formatting exceptions: use \\n\\n for line breaks.
+        Formatting exceptions: use <br> for line breaks.
         ==================================================
         ` + '\nHow would one install your project?\n\n',
         when: ({ sections }) => sections.includes('Installation')
@@ -51,7 +51,7 @@ const questions = [
         message: `
         ==================================================
         Input allows Markdown formatting.
-        Formatting exceptions: use \\n\\n for line breaks.
+        Formatting exceptions: use <br> for line breaks.
         ==================================================
         ` + '\nHow would one use your project?\n\n',
         when: ({ sections }) => sections.includes('Usage')
@@ -76,7 +76,7 @@ const questions = [
         message: `
         ==================================================
         Input allows Markdown formatting.
-        Formatting exceptions: use \\n\\n for line breaks.
+        Formatting exceptions: use <br> for line breaks.
         ==================================================
         ` + '\nWhat guidelines would other developers need to follow when contributing to your project?\n\n',
         when: ({ contributingSelect }) => {
@@ -91,7 +91,7 @@ const questions = [
         message: `
         ==================================================
         Input allows Markdown formatting.
-        Formatting exceptions: use \\n\\n for line breaks.
+        Formatting exceptions: use <br> for line breaks.
         ==================================================
         ` + '\nWhat tests would you like to add?\n\n',
         when: ({ sections }) => sections.includes('Tests')
@@ -114,7 +114,7 @@ const questions = [
         message: `
         ==================================================
         Input allows Markdown formatting.
-        Formatting exceptions: use \\n\\n for line breaks.
+        Formatting exceptions: use <br> for line breaks.
         ==================================================
         ` + '\nHow should others reach you if they have questions?\n\n',
         when: ({ sections }) => sections.includes('Questions')
