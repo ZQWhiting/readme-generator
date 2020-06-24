@@ -71,7 +71,7 @@ const generateLicense = (license) => {
   return `
 <a name='license'></a>
 ## License
-Licensed under the [${license}](./LICENSE.md) license.
+Licensed under the [${license}](./LICENSE.txt) license.
 `
 }
 
@@ -89,7 +89,7 @@ const generateContributing = (contributingSelect, contributing) => {
     return text += contributing + '\n';
 
   } else {
-    return text += '[Contributor Covenant](./contributor-covenant.md)\n';
+    return text += '[Contributor Covenant](./contributor-covenant.txt)\n';
   }
 }
 
