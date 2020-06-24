@@ -31,7 +31,7 @@ const questions = [
         Input allows Markdown formatting.
         Formatting exceptions: use \\n\\n for line breaks.
         ==================================================
-        ` + '\nWhat is your project description?\\n\\n',
+        ` + '\nWhat is your project description?\n\n',
         when: ({ sections }) => sections.includes('Description')
     },
     {
@@ -42,7 +42,7 @@ const questions = [
         Input allows Markdown formatting.
         Formatting exceptions: use \\n\\n for line breaks.
         ==================================================
-        ` + '\nHow would one install your project?\\n\\n',
+        ` + '\nHow would one install your project?\n\n',
         when: ({ sections }) => sections.includes('Installation')
     },
     {
@@ -53,7 +53,7 @@ const questions = [
         Input allows Markdown formatting.
         Formatting exceptions: use \\n\\n for line breaks.
         ==================================================
-        ` + '\nHow would one use your project?\\n\\n',
+        ` + '\nHow would one use your project?\n\n',
         when: ({ sections }) => sections.includes('Usage')
     },
     {
@@ -78,7 +78,7 @@ const questions = [
         Input allows Markdown formatting.
         Formatting exceptions: use \\n\\n for line breaks.
         ==================================================
-        ` + '\nWhat guidelines would other developers need to follow when contributing to your project?\\n\\n',
+        ` + '\nWhat guidelines would other developers need to follow when contributing to your project?\n\n',
         when: ({ contributingSelect }) => {
             if (contributingSelect)
                 contributingSelect.includes('Create your own')
@@ -92,7 +92,7 @@ const questions = [
         Input allows Markdown formatting.
         Formatting exceptions: use \\n\\n for line breaks.
         ==================================================
-        ` + '\nWhat tests would you like to add?\\n\\n',
+        ` + '\nWhat tests would you like to add?\n\n',
         when: ({ sections }) => sections.includes('Tests')
     },
     {
@@ -115,7 +115,7 @@ const questions = [
         Input allows Markdown formatting.
         Formatting exceptions: use \\n\\n for line breaks.
         ==================================================
-        ` + '\nHow should others reach you if they have questions?\\n\\n',
+        ` + '\nHow should others reach you if they have questions?\n\n',
         when: ({ sections }) => sections.includes('Questions')
     },
 ];
