@@ -136,8 +136,8 @@ const generateQuestions = (questions) => {
 function generateMarkdown(templateData) {
   // deconstruction of data
   const { title, sections, description, installation, usage, license, contributingSelect, contributing, tests, ...questions } = templateData;
-  console.log(contributing)
-  return '# ' + title +
+
+  let markdown = '# ' + title +
     generateBadges(license) +
     generateDescription(description) +
     generateToC(sections) +
@@ -147,6 +147,9 @@ function generateMarkdown(templateData) {
     generateContributing(contributingSelect, contributing) +
     generateTests(tests) +
     generateQuestions(questions)
+
+  return markdown.split('\\n').join(`
+`)
 }
 
 module.exports = generateMarkdown;
