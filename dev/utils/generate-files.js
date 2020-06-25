@@ -11,7 +11,7 @@ function writeFile(markdown) {
 
             resolve({
                 ok: true,
-                message: 'ReadMe created!'
+                message: 'ReadMe successfully created! Find your copy in the distribution folder (/dist)'
             });
         });
     });
@@ -32,7 +32,7 @@ const copyLicense = (license) => {
 
             resolve({
                 ok: true,
-                message: 'License copied!'
+                message: 'License successfully copied! Find your copy in the distribution folder (/dist)'
             });
         })
     });
@@ -48,7 +48,7 @@ const copyContributorCovenant = () => {
 
             resolve({
                 ok: true,
-                message: 'Contributor Covenant copied! '
+                message: 'Contributor Covenant successfully copied! Find your copy in the distribution folder (/dist)'
             });
         })
     });
