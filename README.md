@@ -17,6 +17,7 @@ This is a node based app that allows the user to create a high quality README fi
 
 <a name='installation'></a>
 ## Installation
+[Installation Video](https://youtu.be/qHn5av5h1rw)
 * Install [node.js](https://nodejs.org) if not installed.
 * Clone the [repository](https://github.com/ZQWhiting/readme-generator/).
 * In the terminal, navigate to the repository and enter `npm install` to install [inquirer](https://www.npmjs.com/package/inquirer).
@@ -24,6 +25,7 @@ This is a node based app that allows the user to create a high quality README fi
 
 <a name='usage'></a>
 ## Usage
+[Video Guide](https://youtu.be/GplfFkE7R54)
 * Run the `index.js` file in [node.js](https://nodejs.org) by entering `node index` in the terminal.
 * Answer the prompts.
 * Retrieve your files from the `./dist` directory.
