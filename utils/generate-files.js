@@ -24,7 +24,7 @@ const copyLicense = (license) => {
         .replace(' ', '-')
         .replace('/', '-')
     return new Promise((resolve, reject) => {
-        fs.copyFile(`./src/licenses/${license}.txt`, '../dist/LICENSE.txt', err => {
+        fs.copyFile(`./src/licenses/${license}.txt`, './dist/LICENSE.txt', err => {
             if (err) {
                 reject(err);
                 return;
@@ -40,7 +40,7 @@ const copyLicense = (license) => {
 
 const copyContributorCovenant = () => {
     return new Promise((resolve, reject) => {
-        fs.copyFile('./src/contributor-covenant.txt', '../dist/contributor-covenant.txt', err => {
+        fs.copyFile('./src/contributor-covenant.txt', './dist/contributor-covenant.txt', err => {
             if (err) {
                 reject(err);
                 return;
